@@ -130,7 +130,7 @@ const Skills = () => {
         </Typography>
         <Grid container spacing={2} justifyContent="center">
           {skills.map((skill, index) => (
-            <Grid item xs={12} md={2} key={index}>
+            <Grid item xs={6} md={2} key={index}>
               <SkillItem>
                 <ImageContainer>
                   <img src={skill.icon} alt={skill.name} style={{ width: 30, height: 30 }} />
