@@ -84,6 +84,7 @@ const Projects = () => {
                     <Typography color="primary.contrastText" variant="h5" textAlign="center" marginTop={1}>
                       {project.title}
                     </Typography>
+                    
                   </ProjectItem>
                 </Link>
               </Grid>
