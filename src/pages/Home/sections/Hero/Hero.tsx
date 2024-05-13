@@ -42,10 +42,10 @@ const Hero = () => {
             <Grid container spacing={2}>
               <Grid item xs={12} md={5}>
                 <Box position="relative">
-                  <Box position="absolute" width={"130%"} top={-100} right={0}>
+                  <Box position="absolute" width={"150%"} top={-100} right={0}>
                     <AnimatedBackground />
                   </Box>
-                  <Box position="absolute" textAlign="center">
+                  <Box position="relative" textAlign="center">
                     <StyledImage src={Avatar} />
                   </Box>
                 </Box>    
