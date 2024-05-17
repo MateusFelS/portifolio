@@ -28,7 +28,7 @@ const SkillItem = styled(Grid)(({ theme }) => ({
   transition: "background-color 0.3s ease",
   "&:hover": {
     backgroundColor: theme.palette.secondary.main,
-    "& h5": {
+    "& h6": {
       color: theme.palette.primary.contrastText,
     },
   },
@@ -135,7 +135,7 @@ const Skills = () => {
                 <ImageContainer>
                   <img src={skill.icon} alt={skill.name} style={{ width: 30, height: 30 }} />
                 </ImageContainer>
-                <Typography color="primary" variant="h5" textAlign="center">
+                <Typography color="primary" variant="h6" textAlign="center">
                   {skill.name}
                 </Typography>
               </SkillItem>
