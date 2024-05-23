@@ -12,9 +12,15 @@ const NavBar = () => {
     <>
       <AppBar position="relative">
         <StyledToolbar>
-          <MenuItem sx={{ fontSize: fonteMenu }}>About</MenuItem>
-          <MenuItem sx={{ fontSize: fonteMenu }}>Skills</MenuItem>
-          <MenuItem sx={{ fontSize: fonteMenu }}>Projects</MenuItem>
+          <MenuItem sx={{ fontSize: fonteMenu }} component="a" href="#about">
+            About
+          </MenuItem>
+          <MenuItem sx={{ fontSize: fonteMenu }} component="a" href="#skills">
+            Skills
+          </MenuItem>
+          <MenuItem sx={{ fontSize: fonteMenu }} component="a" href="#projects">
+            Projects
+          </MenuItem>
         </StyledToolbar>
       </AppBar>
     </>

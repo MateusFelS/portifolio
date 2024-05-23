@@ -15,10 +15,13 @@ const Hero = () => {
       alignItems: "center",
     }));
 
-    const StyledImage = styled("img")(({theme})=>({
-      width: "80%",
-      borderRadius: "50%",
-      border: `3px solid ${theme.palette.primary.contrastText}`
+    const StyledImage = styled('img')(({ theme }) => ({
+      width: '80%', 
+      height: 'auto', 
+      borderRadius: '50%', 
+      border: `3px solid ${theme.palette.primary.contrastText}`, 
+      objectFit: 'cover', 
+      aspectRatio: '1/1',
     }));
 
     const handleDownloadCV = () => {
