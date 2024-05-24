@@ -22,6 +22,15 @@ const Hero = () => {
       border: `3px solid ${theme.palette.primary.contrastText}`, 
       objectFit: 'cover', 
       aspectRatio: '1/1',
+      '@media (max-width:600px)': {
+        width: '60%',
+      },
+    }));
+
+    const StyledTypography = styled(Typography)(() => ({
+      '@media (max-width:700px)': {
+        fontSize: '1.8rem', 
+      },
     }));
 
     const handleDownloadCV = () => {
@@ -54,8 +63,8 @@ const Hero = () => {
                 </Box>    
               </Grid>
               <Grid item xs={12} md={7}>
-                <Typography color="primary.contrastText" variant="h2" textAlign="center">Mateus Felipe dos Santos</Typography>
-                <Typography color="primary.contrastText" variant="h3" textAlign="center">I'm a Software Engineer</Typography>
+                <StyledTypography color="primary.contrastText" variant="h2" textAlign="center">Mateus Felipe dos Santos</StyledTypography>
+                <StyledTypography color="primary.contrastText" variant="h3" textAlign="center">I'm a Software Engineer</StyledTypography>
                 
                 <Grid container display={"flex"} justifyContent={"center"} spacing={3} marginTop={3}>
                   <Grid item xs={12} md={4} display="flex" justifyContent="center">
@@ -63,8 +72,8 @@ const Hero = () => {
                       <DownloadIcon />
                       <Typography>Download CV</Typography>
                     </StyledButton> 
-                    </Grid>
-                    <Grid item xs={12} md={4} display={"flex"} justifyContent={"center"}>
+                  </Grid>
+                  <Grid item xs={12} md={4} display={"flex"} justifyContent={"center"}>
                     <StyledButton onClick={handleContactMe}>
                       <MailOutlineIcon />
                       <Typography>Contact Me</Typography>
@@ -80,4 +89,3 @@ const Hero = () => {
   }
   
   export default Hero
-  
