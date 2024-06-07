@@ -3,7 +3,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Typewriter from "typewriter-effect";
 
-import Avatar from "../../../../assets/images/avatar.jpg";
+import Avatar from "../../../../assets/images/avatar.jpeg";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import CurriculumPDF from "../../../../assets/cv/Currículo.pdf";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
@@ -65,14 +65,7 @@ const Hero = () => {
           </Grid>
           <Grid item xs={12} md={7}>
             <StyledTypography variant="h2">
-              <Typewriter
-                options={{
-                  strings: ['Mateus Felipe dos Santos'],
-                  autoStart: true,
-                  loop: true,
-                  deleteSpeed: 50,
-                }}
-              />
+              Mateus Felipe dos Santos
             </StyledTypography>
             <StyledTypography variant="h3">
               <Typewriter

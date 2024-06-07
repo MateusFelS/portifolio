@@ -1,4 +1,4 @@
-import { Container, Grid, Typography, styled } from "@mui/material";
+import { Container, Grid, Typography, styled, useMediaQuery, useTheme } from "@mui/material";
 import JS from "../../../../assets/images/javascript.png";
 import TS from "../../../../assets/images/typescript.png";
 import FLUTTER from "../../../../assets/images/flutter.png";
@@ -20,7 +20,7 @@ import INGLES from "../../../../assets/images/ingles.png";
 
 const SkillItem = styled(Grid)(({ theme }) => ({
   display: "flex",
-  flexDirection: "row",
+  flexDirection: "column", // Altera de row para column
   alignItems: "center",
   padding: theme.spacing(2),
   border: "1px solid black",
@@ -35,7 +35,10 @@ const SkillItem = styled(Grid)(({ theme }) => ({
 }));
 
 const ImageContainer = styled("div")(({ theme }) => ({
-  marginRight: theme.spacing(1), 
+  marginBottom: theme.spacing(1), // Altera de marginRight para marginBottom
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 }));
 
 const Skills = () => {
@@ -47,79 +50,28 @@ const Skills = () => {
     paddingBottom: 100,
   }));
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   const skills = [
-    {
-      name: "JavaScript",
-      icon: JS, 
-    },
-    {
-      name: "TypeScript",
-      icon: TS, 
-    },
-    {
-      name: "HTML",
-      icon: HTML, 
-    },
-    {
-      name: "CSS",
-      icon: CSS, 
-    },
-    {
-      name: "Node.js",
-      icon: NODE, 
-    },
-    {
-      name: "WordPress",
-      icon: WP, 
-    },
-    {
-      name: "C#",
-      icon: CSHARP, 
-    },
-    {
-      name: "MySQL",
-      icon: MYSQL, 
-    },
-    {
-      name: "PHP",
-      icon: PHP, 
-    },
-    {
-      name: "Python",
-      icon: PYTHON, 
-    },
-    {
-      name: "React",
-      icon: REACT, 
-    },
-    {
-      name: "ReactNative",
-      icon: RN, 
-    },
-    {
-      name: "Flutter",
-      icon: FLUTTER, 
-    },
-    {
-      name: "Firebase",
-      icon: FIREBASE, 
-    },
-    {
-      name: "Nest.js",
-      icon: NEST, 
-    },
-    {
-      name: "Prisma",
-      icon: PRISMA, 
-    },
-    {
-      name: "Git",
-      icon: GIT, 
-    },
-    {
-      name: "Inglês",
-      icon: INGLES, 
-    },
+    { name: "JavaScript", icon: JS },
+    { name: "TypeScript", icon: TS },
+    { name: "HTML", icon: HTML },
+    { name: "CSS", icon: CSS },
+    { name: "Node.js", icon: NODE },
+    { name: "WordPress", icon: WP },
+    { name: "C#", icon: CSHARP },
+    { name: "MySQL", icon: MYSQL },
+    { name: "PHP", icon: PHP },
+    { name: "Python", icon: PYTHON },
+    { name: "React", icon: REACT },
+    { name: "ReactNative", icon: RN },
+    { name: "Flutter", icon: FLUTTER },
+    { name: "Firebase", icon: FIREBASE },
+    { name: "Nest.js", icon: NEST },
+    { name: "Prisma", icon: PRISMA },
+    { name: "Git", icon: GIT },
+    { name: "Inglês", icon: INGLES },
   ];
 
   return (
@@ -130,14 +82,16 @@ const Skills = () => {
         </Typography>
         <Grid container spacing={2} justifyContent="center">
           {skills.map((skill, index) => (
-            <Grid item xs={6} md={2} key={index}>
+            <Grid item xs={4} sm={2} md={2} key={index}>
               <SkillItem>
                 <ImageContainer>
-                  <img src={skill.icon} alt={skill.name} style={{ width: 30, height: 30 }} />
+                  <img src={skill.icon} alt={skill.name} style={{ width: 32, height: 32 }} />
                 </ImageContainer>
-                <Typography color="primary" variant="h6" textAlign="center">
-                  {skill.name}
-                </Typography>
+                {!isMobile && (
+                  <Typography color="primary" variant="h6" textAlign="center">
+                    {skill.name}
+                  </Typography>
+                )}
               </SkillItem>
             </Grid>
           ))}
