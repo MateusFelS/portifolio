@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Grid, Typography, styled, Link, useTheme, useMediaQuery } from "@mui/material";
-import { Book, Diamond, Map, Restaurant, Code, Checkroom, Public } from "@mui/icons-material";
+import { Book, Diamond, Map, Restaurant, Code, Checkroom, Pets } from "@mui/icons-material";
 
 const Projects = () => {
   const StyledProjects = styled("div")(({ theme }) => ({
@@ -74,10 +74,10 @@ const Projects = () => {
     },
     {
       id: 7,
-      title: "Planet Tour",
-      icon: createIcon(Public),
-      langs: "React + Tailwind",
-      link: "https://github.com/MateusFelS/planet_tour/tree/main",
+      title: "Petshop",
+      icon: createIcon(Pets),
+      langs: "React + Tailwind CSS",
+      link: "https://github.com/MateusFelS/petshop",
     },
   ];
 
