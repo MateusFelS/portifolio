@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 
 import Avatar from "../../../../assets/images/avatar.jpeg";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
-import CurriculumPDF from "../../../../assets/cv/Currículo.pdf";
+import CurriculumPDF from "../../../../assets/cv/Curriculo-Mateus.pdf";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 
 const Hero = () => {
