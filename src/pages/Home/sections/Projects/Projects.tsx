@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Grid, Typography, styled, Link, useTheme, useMediaQuery } from "@mui/material";
-import { Book, Diamond, Map, Restaurant, Code, Checkroom, Pets } from "@mui/icons-material";
+import { Book, ContentCut, Map, Restaurant, Code, Checkroom, Pets } from "@mui/icons-material";
 
 const Projects = () => {
   const StyledProjects = styled("div")(({ theme }) => ({
@@ -46,10 +46,10 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Bijoux",
-      icon: createIcon(Diamond),
-      langs: "Flutter + Firebase",
-      link: "https://github.com/MateusFelS/bijoux",
+      title: "ProdManage",
+      icon: createIcon(ContentCut),
+      langs: "Flutter + Nest.js + Ruby + Cucumber",
+      link: "https://github.com/MateusFelS/prod_manage",
     },
     {
       id: 4,
@@ -78,6 +78,14 @@ const Projects = () => {
       icon: createIcon(Pets),
       langs: "React + Tailwind CSS",
       link: "https://github.com/MateusFelS/petshop",
+    },
+
+    {
+      id: 8,
+      title: "Analista de QA",
+      icon: createIcon(Pets),
+      langs: "Plano de Teste + Teste de Sistema + Análise Estática",
+      link: "https://github.com/VirsoRaivoky/Puzzle",
     },
   ];
 

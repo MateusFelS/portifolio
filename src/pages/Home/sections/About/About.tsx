@@ -19,7 +19,12 @@ const About = () => {
           <Grid container spacing={2}>
               <Grid item xs={12} md={12} >
                 <Typography color="primary" variant="h4" textAlign="justify">
-                  I have been studying software development since 2019 in college and mobile applications on my own. I have already developed some mobile applications, and my specialties are Flutter and Firebase. And I'm currently studying React and React Native. I am willing to learn and work in any area, so if you are interested, just contact me!
+                  Recently graduated in Software Engineering, I am passionate about
+                  mobile development, especially with Flutter and React Native. I'm also
+                  improving my skills in Software Quality, focusing on Ruby, Cucumber and
+                  Cypress. I look for opportunities to apply my versatility and passion for
+                  technology, developing innovative mobile solutions and ensuring the
+                  quality of applications through automated testing.
                 </Typography>
             </Grid>
           </Grid>
