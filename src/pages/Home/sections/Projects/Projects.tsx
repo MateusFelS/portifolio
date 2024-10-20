@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Grid, Typography, styled, Link, useTheme, useMediaQuery } from "@mui/material";
-import { Book, ContentCut, Map, Restaurant, Code, Checkroom, Pets } from "@mui/icons-material";
+import { Book, ContentCut, Map, Restaurant, Code, Checkroom, Pets, Extension } from "@mui/icons-material";
 
 const Projects = () => {
   const StyledProjects = styled("div")(({ theme }) => ({
@@ -83,7 +83,7 @@ const Projects = () => {
     {
       id: 8,
       title: "Analista de QA",
-      icon: createIcon(Pets),
+      icon: createIcon(Extension),
       langs: "Plano de Teste + Teste de Sistema + Análise Estática",
       link: "https://github.com/VirsoRaivoky/Puzzle",
     },

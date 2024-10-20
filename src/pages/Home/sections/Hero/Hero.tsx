@@ -67,10 +67,10 @@ const Hero = () => {
             <StyledTypography variant="h2">
               Mateus Felipe dos Santos
             </StyledTypography>
-            <StyledTypography variant="h3">
+            <StyledTypography variant="h4">
               <Typewriter
                 options={{
-                  strings: ["I'm a Software Engineer"],
+                  strings: ["QA Analyst | Manual Tests | Automated Tests"],
                   autoStart: true,
                   loop: true,
                   deleteSpeed: 50,

@@ -17,10 +17,14 @@ import PRISMA from "../../../../assets/images/prisma.png";
 import GIT from "../../../../assets/images/git.png";
 import FIREBASE from "../../../../assets/images/firebase.png";
 import INGLES from "../../../../assets/images/ingles.png";
+import CUCUMBER from "../../../../assets/images/cucumber.png";
+import POSTMAN from "../../../../assets/images/postman.png";
+import RUBY from "../../../../assets/images/ruby.png";
+import CYPRESS from "../../../../assets/images/cypress.png";
 
 const SkillItem = styled(Grid)(({ theme }) => ({
   display: "flex",
-  flexDirection: "column", // Altera de row para column
+  flexDirection: "column",
   alignItems: "center",
   padding: theme.spacing(2),
   border: "1px solid black",
@@ -35,7 +39,7 @@ const SkillItem = styled(Grid)(({ theme }) => ({
 }));
 
 const ImageContainer = styled("div")(({ theme }) => ({
-  marginBottom: theme.spacing(1), // Altera de marginRight para marginBottom
+  marginBottom: theme.spacing(1),
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -53,26 +57,38 @@ const Skills = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const skills = [
-    { name: "JavaScript", icon: JS },
-    { name: "TypeScript", icon: TS },
-    { name: "HTML", icon: HTML },
-    { name: "CSS", icon: CSS },
-    { name: "Node.js", icon: NODE },
-    { name: "WordPress", icon: WP },
-    { name: "C#", icon: CSHARP },
-    { name: "MySQL", icon: MYSQL },
-    { name: "PHP", icon: PHP },
-    { name: "Python", icon: PYTHON },
-    { name: "React", icon: REACT },
-    { name: "ReactNative", icon: RN },
-    { name: "Flutter", icon: FLUTTER },
-    { name: "Firebase", icon: FIREBASE },
-    { name: "Nest.js", icon: NEST },
-    { name: "Prisma", icon: PRISMA },
-    { name: "Git", icon: GIT },
-    { name: "Inglês", icon: INGLES },
-  ];
+  const skillCategories = {
+    "Linguagens de Programação": [
+      { name: "JavaScript", icon: JS },
+      { name: "TypeScript", icon: TS },
+      { name: "C#", icon: CSHARP },
+      { name: "PHP", icon: PHP },
+      { name: "Python", icon: PYTHON },
+      { name: "Ruby", icon: RUBY },
+    ],
+    "Frameworks e Bibliotecas": [
+      { name: "Node.js", icon: NODE },
+      { name: "React", icon: REACT },
+      { name: "React Native", icon: RN },
+      { name: "Flutter", icon: FLUTTER },
+      { name: "Nest.js", icon: NEST },
+      { name: "Cucumber", icon: CUCUMBER },
+      { name: "Cypress", icon: CYPRESS },
+    ],
+    "Bancos de Dados": [
+      { name: "MySQL", icon: MYSQL },
+      { name: "Prisma", icon: PRISMA },
+      { name: "Firebase", icon: FIREBASE },
+    ],
+    "Outras Tecnologias": [
+      { name: "WordPress", icon: WP },
+      { name: "Git", icon: GIT },
+      { name: "Postman", icon: POSTMAN },
+      { name: "HTML", icon: HTML },
+      { name: "CSS", icon: CSS },      
+      { name: "Inglês", icon: INGLES },
+    ],
+  };
 
   return (
     <StyledSkills>
@@ -80,22 +96,29 @@ const Skills = () => {
         <Typography color="primary" variant="h2" textAlign="center" marginBottom={4}>
           Skills
         </Typography>
-        <Grid container spacing={2} justifyContent="center">
-          {skills.map((skill, index) => (
-            <Grid item xs={4} sm={2} md={2} key={index}>
-              <SkillItem>
-                <ImageContainer>
-                  <img src={skill.icon} alt={skill.name} style={{ width: 32, height: 32 }} />
-                </ImageContainer>
-                {!isMobile && (
-                  <Typography color="primary" variant="h6" textAlign="center">
-                    {skill.name}
-                  </Typography>
-                )}
-              </SkillItem>
+        {Object.entries(skillCategories).map(([category, skills]) => (
+          <div key={category}>
+            <Typography variant="h4" color="primary" textAlign="start" marginTop={4} marginBottom={2}>
+              {category}
+            </Typography>
+            <Grid container spacing={2} justifyContent="start">
+              {skills.map((skill, index) => (
+                <Grid item xs={4} sm={2} md={2} key={index}>
+                  <SkillItem>
+                    <ImageContainer>
+                      <img src={skill.icon} alt={skill.name} style={{ width: 32, height: 32 }} />
+                    </ImageContainer>
+                    {!isMobile && (
+                      <Typography color="primary" variant="h6" textAlign="center">
+                        {skill.name}
+                      </Typography>
+                    )}
+                  </SkillItem>
+                </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
+          </div>
+        ))}
       </Container>
     </StyledSkills>
   );

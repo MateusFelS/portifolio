@@ -19,7 +19,7 @@ const About = () => {
           <Grid container spacing={2}>
               <Grid item xs={12} md={12} >
                 <Typography color="primary" variant="h4" textAlign="justify">
-                  Recently graduated in Software Engineering, I am passionate about
+                  Recently graduated as Software Engineering, I am passionate about
                   mobile development, especially with Flutter and React Native. I'm also
                   improving my skills in Software Quality, focusing on Ruby, Cucumber and
                   Cypress. I look for opportunities to apply my versatility and passion for
