@@ -14,17 +14,16 @@ const About = () => {
       <StyledAbout>
         <Container maxWidth="lg">
           <Typography color="primary" variant="h2" textAlign="center" marginBottom={4}>
-            About Me
+            Sobre Mim
           </Typography>
           <Grid container spacing={2}>
               <Grid item xs={12} md={12} >
                 <Typography color="primary" variant="h4" textAlign="justify">
-                  Recently graduated as Software Engineering, I am passionate about
-                  mobile development, especially with Flutter and React Native. I'm also
-                  improving my skills in Software Quality, focusing on Ruby, Cucumber and
-                  Cypress. I look for opportunities to apply my versatility and passion for
-                  technology, developing innovative mobile solutions and ensuring the
-                  quality of applications through automated testing.
+                Recém-formado em Ciência da Computação, com experiência em projetos freelance
+                e voluntários focados em testes manuais e automação de testes. Possuo domínio 
+                em ferramentas como Cypress, Cucumber, Selenium, Appium e Postman. Tenho conhecimento em práticas de QA, 
+                incluindo teste de sistemas, análise estática, escrita do plano de teste e casos de teste. 
+                Busco minha primeira oportunidade formal como Analista de QA, com interesse em vagas remotas.
                 </Typography>
             </Grid>
           </Grid>

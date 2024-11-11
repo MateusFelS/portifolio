@@ -70,7 +70,7 @@ const Hero = () => {
             <StyledTypography variant="h4">
               <Typewriter
                 options={{
-                  strings: ["QA Analyst | Manual Tests | Automated Tests"],
+                  strings: ["QA Junior | Testes Manuais e Automatizados"],
                   autoStart: true,
                   loop: true,
                   deleteSpeed: 50,
@@ -87,7 +87,7 @@ const Hero = () => {
               <Grid item xs={12} md={4} display={"flex"} justifyContent={"center"}>
                 <StyledButton onClick={handleContactMe}>
                   <MailOutlineIcon />
-                  <Typography>Contact Me</Typography>
+                  <Typography>Entre em Contato</Typography>
                 </StyledButton>
               </Grid>
             </Grid>

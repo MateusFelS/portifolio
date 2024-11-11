@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Grid, Typography, styled, Link, useTheme, useMediaQuery } from "@mui/material";
-import { Book, ContentCut, Map, Restaurant, Code, Checkroom, Pets, Extension } from "@mui/icons-material";
+import { Book, ContentCut, Map, Restaurant, Code, Checkroom, Pets, Extension, Coffee } from "@mui/icons-material";
 
 const Projects = () => {
   const StyledProjects = styled("div")(({ theme }) => ({
@@ -79,13 +79,19 @@ const Projects = () => {
       langs: "React + Tailwind CSS",
       link: "https://github.com/MateusFelS/petshop",
     },
-
     {
       id: 8,
       title: "Analista de QA",
       icon: createIcon(Extension),
-      langs: "Plano de Teste + Teste de Sistema + Análise Estática",
+      langs: "Plano de Teste + Teste de Sistema",
       link: "https://github.com/VirsoRaivoky/Puzzle",
+    },
+    {
+      id: 9,
+      title: "Automoção Cypress",
+      icon: createIcon(Coffee),
+      langs: "Cypress + JS",
+      link: "https://github.com/MateusFelS/coffee-cart-tests",
     },
   ];
 
@@ -110,7 +116,7 @@ const Projects = () => {
     <StyledProjects>
       <Container maxWidth="lg">
         <Typography color="primary.contrastText" variant="h2" textAlign="center" marginBottom={4}>
-          My Projects
+          Meus Projetos
         </Typography>
         {isMobile ? (
           <div style={{ position: 'relative' }}>

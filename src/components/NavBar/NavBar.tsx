@@ -25,9 +25,9 @@ const NavBar = () => {
   const fonteMenu = "1.2rem";
 
   const menuItems = [
-    { text: 'About', href: '#about', icon: <InfoIcon /> },
+    { text: 'Sobre Mim', href: '#about', icon: <InfoIcon /> },
     { text: 'Skills', href: '#skills', icon: <BuildIcon /> },
-    { text: 'Projects', href: '#projects', icon: <FolderIcon /> },
+    { text: 'Meus Projetos', href: '#projects', icon: <FolderIcon /> },
   ];
 
   return (
