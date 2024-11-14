@@ -13,7 +13,7 @@ O portfólio contém várias seções que mostram minha experiência e habilidad
 
 - **Sobre Mim**: Uma introdução pessoal com detalhes sobre meu histórico profissional e áreas de atuação.
 - **Contato**: Informações de contato e um link para download do currículo.
-- **Skills**: Exibe um conjunto de habilidades e ferramentas com as quais possuo experiência, incluindo ferramentas de QA e linguagens de programação.
+- **Skills**: Exibe um conjunto de habilidades e ferramentas com as quais possuo experiência, incluindo ferramentas de QA, linguagens de programação, frameworks e banco de dados.
 - **Projetos**: Apresentação de projetos realizados com destaque para as áreas de **QA** e **programação**:
   - **Projetos de Automação e QA**: Mostra projetos focados em automação de testes e qualidade de software.
   - **Outros Projetos**: Contém projetos voltados para desenvolvimento de software e programação geral.
