@@ -70,7 +70,7 @@ const Hero = () => {
             <StyledTypography variant="h4">
               <Typewriter
                 options={{
-                  strings: ["QA Junior | Testes Manuais e Automatizados"],
+                  strings: ["QA | Testes Manuais e Automatizados"],
                   autoStart: true,
                   loop: true,
                   deleteSpeed: 50,
