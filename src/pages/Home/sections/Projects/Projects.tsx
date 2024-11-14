@@ -194,7 +194,7 @@ const Projects = () => {
         )}
 
         <Typography color="primary.contrastText" variant="h2" textAlign="center" marginTop={8} marginBottom={4}>
-          Projetos de Programação
+          Outros Projetos
         </Typography>
         {isMobile ? <Carousel projects={programmingProjects} /> : (
           <Grid container spacing={2} justifyContent="center">
