@@ -57,7 +57,7 @@ const Projects = () => {
       title: "Analista de QA",
       icon: createIcon(Extension),
       langs: "Plano de Teste + Teste de Sistema",
-      link: "https://github.com/VirsoRaivoky/Puzzle",
+      link: "https://github.com/VirsoRaivoky/Puzzle/tree/main/puzzle_manual_testing",
     }
   ];
 
