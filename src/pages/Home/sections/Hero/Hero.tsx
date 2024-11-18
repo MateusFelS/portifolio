@@ -28,13 +28,18 @@ const Hero = () => {
     },
   }));
 
-  const StyledTypography = styled(Typography)(({ theme }) => ({
-    color: theme.palette.primary.contrastText,
-    textAlign: "center",
-    "@media (max-width:700px)": {
-      fontSize: "1.8rem",
+const StyledTypography = styled(Typography)(({ theme }) => ({
+  color: theme.palette.primary.contrastText,
+  textAlign: "center",
+  "@media (max-width:700px)": {
+    "&.MuiTypography-h2": {
+      fontSize: "2.4rem", // Tamanho para h2 em telas menores
     },
-  }));
+    "&.MuiTypography-h4": {
+      fontSize: "1.8rem", // Tamanho para h4 em telas menores
+    },
+  },
+}));
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
