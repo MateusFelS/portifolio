@@ -33,10 +33,10 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   "@media (max-width:700px)": {
     "&.MuiTypography-h2": {
-      fontSize: "2.4rem", // Tamanho para h2 em telas menores
+      fontSize: "1.8rem", 
     },
     "&.MuiTypography-h4": {
-      fontSize: "1.8rem", // Tamanho para h4 em telas menores
+      fontSize: "1.2rem", 
     },
   },
 }));
