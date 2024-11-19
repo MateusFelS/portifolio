@@ -80,7 +80,7 @@ const Skills = () => {
       { name: "Prisma", icon: PRISMA },
       { name: "Firebase", icon: FIREBASE },
     ],
-    "Outras Tecnologias": [
+    "Outros": [
       { name: "WordPress", icon: WP },
       { name: "Git", icon: GIT },
       { name: "Postman", icon: POSTMAN },
