@@ -50,7 +50,7 @@ const Projects = () => {
       title: "Automação API - Serverest",
       icon: createIcon(Inventory),
       langs: "Cypress + JS",
-      link: "https://github.com/MateusFelS/api_tests",
+      link: "https://github.com/MateusFelS/serverest-api-tests",
     },
     {
       id: 3,
@@ -201,7 +201,7 @@ const Projects = () => {
         )}
 
         <Typography color="primary.contrastText" variant="h2" textAlign="center" marginTop={8} marginBottom={4}>
-          Projetos de Programação
+          Outros Projetos
         </Typography>
         {isMobile ? <Carousel projects={programmingProjects} /> : (
           <Grid container spacing={2} justifyContent="center">
