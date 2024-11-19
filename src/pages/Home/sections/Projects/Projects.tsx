@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Grid, Typography, styled, Link, useTheme, useMediaQuery } from "@mui/material";
-import { Book, ContentCut, Map, Restaurant, Code, Checkroom, Pets, Extension, Coffee, Inventory } from "@mui/icons-material";
+import { Book, ContentCut, Map, Restaurant, Code, Checkroom, Pets, Extension, Coffee, Inventory, ShoppingBag } from "@mui/icons-material";
 
 type Project = {
   id: number;
@@ -40,72 +40,79 @@ const Projects = () => {
   const automationProjects: Project[] = [
     {
       id: 1,
-      title: "Automação Web",
+      title: "Automação Web - Coffee Cart",
       icon: createIcon(Coffee),
       langs: "Cypress + JS",
       link: "https://github.com/MateusFelS/coffee-cart-tests",
     },
     {
       id: 2,
-      title: "Automação API",
+      title: "Automação API - Serverest",
       icon: createIcon(Inventory),
       langs: "Cypress + JS",
       link: "https://github.com/MateusFelS/api_tests",
     },
     {
       id: 3,
-      title: "Analista de QA",
+      title: "Analista de QA - Voluntário",
       icon: createIcon(Extension),
       langs: "Plano de Teste + Teste de Sistema",
       link: "https://github.com/VirsoRaivoky/Puzzle",
+    },
+    {
+      id: 4,
+      title: "Automoção Web - Swag Labs",
+      icon: createIcon(ShoppingBag),
+      langs: "Playwright + TS",
+      link: "https://github.com/MateusFelS/swag-labs-tests",
     }
   ];
 
   const programmingProjects: Project[] = [
     {
-      id: 4,
+      id: 5,
       title: "StyleSphere",
       icon: createIcon(Checkroom),
       langs: "WordPress",
       link: "https://github.com/MateusFelS/style_sphere",
     },
     {
-      id: 5,
+      id: 6,
       title: "VeggieDelight",
       icon: createIcon(Restaurant),
       langs: "Flutter + Firebase",
       link: "https://github.com/MateusFelS/receitas",
     },
     {
-      id: 6,
+      id: 7,
       title: "ProdManage",
       icon: createIcon(ContentCut),
       langs: "Flutter + Nest.js + Ruby + Cucumber",
       link: "https://github.com/MateusFelS/prod_manage",
     },
     {
-      id: 7,
+      id: 8,
       title: "MapsAndRouts",
       icon: createIcon(Map),
       langs: "React Native",
       link: "https://github.com/MateusFelS/maps_and_routs",
     },
     {
-      id: 8,
+      id: 9,
       title: "Compilador",
       icon: createIcon(Code),
       langs: "C#",
       link: "https://github.com/MateusFelS/compilador",
     },
     {
-      id: 9,
+      id: 10,
       title: "Artigo Publicado",
       icon: createIcon(Book),
       langs: "Atena Editora",
       link: "https://atenaeditora.com.br/index.php/catalogo/post/metodo-resolucao-de-problemas-aplicado-ao-ensino-de-aprendizado-de-maquina",
     },
     {
-      id: 10,
+      id: 11,
       title: "Petshop",
       icon: createIcon(Pets),
       langs: "React + Tailwind CSS",
