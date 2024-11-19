@@ -59,7 +59,7 @@ const NavBar = () => {
         >
           <Box sx={{ p: 2 }}>
             <Typography variant="h6" textAlign="center">
-              Navigation
+              Menu
             </Typography>
           </Box>
           <Divider />

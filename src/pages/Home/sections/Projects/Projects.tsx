@@ -58,17 +58,22 @@ const Projects = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const Carousel = ({ projects, itemsPerSlide }: { projects: Project[]; itemsPerSlide: number }) => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-  
-    const totalSlides = Math.ceil(projects.length / itemsPerSlide);
+    const [currentIndex, setCurrentIndex] = useState(0);
   
     const handlePrev = () => {
-      setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+      setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
     };
   
     const handleNext = () => {
-      setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+      setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
     };
+  
+    const visibleProjects = projects.slice(
+      currentIndex,
+      currentIndex + itemsPerSlide
+    ).concat(
+      projects.slice(0, Math.max(0, currentIndex + itemsPerSlide - projects.length))
+    );
   
     return (
       <div style={{ position: "relative", overflow: "hidden" }}>
@@ -76,32 +81,69 @@ const Projects = () => {
           style={{
             display: "flex",
             transition: "transform 0.5s ease-in-out",
-            transform: `translateX(-${currentSlide * (100 / itemsPerSlide)}%)`,
           }}
         >
-          {projects.map((project, index) => (
-            <div key={index} style={{ display: "flex", minWidth: `${100 / itemsPerSlide}%` }}>
-              <Link key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" underline="none" style={{ flex: 1 }}>
-                <ProjectItem>
-                  <div style={{ marginBottom: 10 }}>{project.icon}</div>
-                  <Typography color="primary.contrastText" variant="h5" textAlign="center" marginTop={1}>
-                    {project.title}
-                  </Typography>
-                  <Typography color="primary.contrastText" variant="h6" textAlign="center" marginTop={1}>
-                    {project.langs}
-                  </Typography>
-                </ProjectItem>
-              </Link>
-            </div>
+          {visibleProjects.map((project) => (
+            <Link
+              key={project.id}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              underline="none"
+              style={{
+                flexBasis: `${100 / itemsPerSlide}%`,
+                flexGrow: 0,
+                flexShrink: 0,
+              }}
+            >
+              <ProjectItem>
+                <div style={{ marginBottom: 10 }}>{project.icon}</div>
+                <Typography
+                  color="primary.contrastText"
+                  variant="h5"
+                  textAlign="center"
+                  marginTop={1}
+                >
+                  {project.title}
+                </Typography>
+                <Typography
+                  color="primary.contrastText"
+                  variant="h6"
+                  textAlign="center"
+                  marginTop={1}
+                >
+                  {project.langs}
+                </Typography>
+              </ProjectItem>
+            </Link>
           ))}
         </div>
-        <button onClick={handlePrev} style={navButtonStyle}>‹</button>
-        <button onClick={handleNext} style={navButtonStyleNext}>›</button>
+        <button onClick={handlePrev} style={navButtonStyle}>
+          ‹
+        </button>
+        <button onClick={handleNext} style={navButtonStyleNext}>
+          ›
+        </button>
+  
+        <div style={{ display: "flex", justifyContent: "center", marginTop: 10 }}>
+          {projects.map((_, index) => (
+            <div
+              key={index}
+              style={{
+                width: 10,
+                height: 10,
+                margin: "0 5px",
+                borderRadius: "50%",
+                backgroundColor: currentIndex === index ? "#fff" : "#888",
+                transition: "background-color 0.3s",
+              }}
+            ></div>
+          ))}
+        </div>
       </div>
     );
   };  
   
-
   return (
     <StyledProjects>
       <Container maxWidth="lg">
