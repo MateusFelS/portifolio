@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Typography, styled, Link, useTheme, useMediaQuery } from "@mui/material";
-import { Book, ContentCut, Map, Restaurant, Code, Checkroom, Pets, Extension, Coffee, Inventory, ShoppingBag } from "@mui/icons-material";
+import { Book, ContentCut, Map, Restaurant, Code, Checkroom, Pets, Extension, Coffee, Inventory, ShoppingBag, PendingActions } from "@mui/icons-material";
 
 type Project = {
   id: number;
@@ -40,18 +40,19 @@ const Projects = () => {
   const automationProjects: Project[] = [
     { id: 1, title: "Automação Web - Coffee Cart", icon: createIcon(Coffee), langs: "Cypress + JS", link: "https://github.com/MateusFelS/coffee-cart-tests" },
     { id: 2, title: "Automação API - Serverest", icon: createIcon(Inventory), langs: "Cypress + JS", link: "https://github.com/MateusFelS/serverest-api-tests" },
-    { id: 3, title: "Analista de QA - Voluntário", icon: createIcon(Extension), langs: "Plano de Teste + Teste de Sistema", link: "https://github.com/VirsoRaivoky/Puzzle" },
-    { id: 4, title: "Automoção Web - Swag Labs", icon: createIcon(ShoppingBag), langs: "Playwright + TS", link: "https://github.com/MateusFelS/swag-labs-tests" },
+    { id: 3, title: "Estudo de Documentações QA", icon: createIcon(PendingActions), langs: "Plano de Teste, Casos de Teste e Bug Report", link: "https://github.com/MateusFelS/manual-QA-exemples" },
+    { id: 4, title: "Analista de QA - Voluntário", icon: createIcon(Extension), langs: "Plano de Teste + Teste de Sistema", link: "https://github.com/VirsoRaivoky/Puzzle" },
+    { id: 5, title: "Automoção Web - Swag Labs", icon: createIcon(ShoppingBag), langs: "Playwright + TS", link: "https://github.com/MateusFelS/swag-labs-tests" },
   ];
 
   const programmingProjects: Project[] = [
-    { id: 5, title: "StyleSphere", icon: createIcon(Checkroom), langs: "WordPress", link: "https://github.com/MateusFelS/style_sphere" },
-    { id: 6, title: "VeggieDelight", icon: createIcon(Restaurant), langs: "Flutter + Firebase", link: "https://github.com/MateusFelS/receitas" },
-    { id: 7, title: "ProdManage", icon: createIcon(ContentCut), langs: "Flutter + Nest.js + Ruby + Cucumber", link: "https://github.com/MateusFelS/prod_manage" },
-    { id: 8, title: "MapsAndRouts", icon: createIcon(Map), langs: "React Native", link: "https://github.com/MateusFelS/maps_and_routs" },
-    { id: 9, title: "Compilador", icon: createIcon(Code), langs: "C#", link: "https://github.com/MateusFelS/compilador" },
-    { id: 10, title: "Artigo Publicado", icon: createIcon(Book), langs: "Atena Editora", link: "https://atenaeditora.com.br/index.php/catalogo/post/metodo-resolucao-de-problemas-aplicado-ao-ensino-de-aprendizado-de-maquina" },
-    { id: 11, title: "Petshop", icon: createIcon(Pets), langs: "React + Tailwind CSS", link: "https://github.com/MateusFelS/petshop" },
+    { id: 6, title: "StyleSphere", icon: createIcon(Checkroom), langs: "WordPress", link: "https://github.com/MateusFelS/style_sphere" },
+    { id: 7, title: "VeggieDelight", icon: createIcon(Restaurant), langs: "Flutter + Firebase", link: "https://github.com/MateusFelS/receitas" },
+    { id: 8, title: "ProdManage", icon: createIcon(ContentCut), langs: "Flutter + Nest.js + Ruby + Cucumber", link: "https://github.com/MateusFelS/prod_manage" },
+    { id: 9, title: "MapsAndRouts", icon: createIcon(Map), langs: "React Native", link: "https://github.com/MateusFelS/maps_and_routs" },
+    { id: 10, title: "Compilador", icon: createIcon(Code), langs: "C#", link: "https://github.com/MateusFelS/compilador" },
+    { id: 11, title: "Artigo Publicado", icon: createIcon(Book), langs: "Atena Editora", link: "https://atenaeditora.com.br/index.php/catalogo/post/metodo-resolucao-de-problemas-aplicado-ao-ensino-de-aprendizado-de-maquina" },
+    { id: 12, title: "Petshop", icon: createIcon(Pets), langs: "React + Tailwind CSS", link: "https://github.com/MateusFelS/petshop" },
   ];
 
   const theme = useTheme();
