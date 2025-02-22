@@ -1,6 +1,21 @@
-import React, { useState } from 'react';
-import { Container, Typography, styled, Link, useTheme, useMediaQuery } from "@mui/material";
-import { Book, ContentCut, Map, Restaurant, Code, Checkroom, Pets, Extension, Coffee, Inventory, ShoppingBag, PendingActions } from "@mui/icons-material";
+import React from 'react';
+import { Container, Typography, styled, Link, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { 
+  FaCoffee, 
+  FaWarehouse, 
+  FaShoppingBag, 
+  FaBook, 
+  FaTshirt, 
+  FaUtensils, 
+  FaCut, 
+  FaMapMarkedAlt, 
+  FaCode, 
+  FaPaw,
+  FaLaptopCode,
+  FaFileAlt,
+  FaTools,
+  FaPuzzlePiece
+} from 'react-icons/fa';
 
 type Project = {
   id: number;
@@ -8,180 +23,113 @@ type Project = {
   icon: JSX.Element;
   langs: string;
   link: string;
+  role: string; 
 };
 
+const StyledProjects = styled("div")(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
+  paddingTop: 100,
+  paddingBottom: 50,
+  minHeight: "100vh",
+}));
+
+const StyledList = styled(List)(({ theme }) => ({
+  maxHeight: '400px',
+  overflowY: 'auto',
+  border: `1px solid ${theme.palette.divider}`,
+  borderRadius: '8px', 
+  boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+  backgroundColor: '#000000', 
+  color: '#ffffff',
+  width: '100%', 
+  maxWidth: '800px', 
+  margin: '0 auto',
+}));
+
+const createIcon = (IconComponent: React.ElementType, color = "#ffffff", fontSize = "30px") => {
+  return <IconComponent style={{ color, fontSize }} />;
+};
+
+const automationProjects: Project[] = [
+  { id: 1, title: "Automação Web - Coffee Cart", icon: createIcon(FaCoffee), langs: "Cypress + JS", link: "https://github.com/MateusFelS/coffee-cart-tests", role: "Engenheiro de QA" },
+  { id: 2, title: "Automação API - Serverest", icon: createIcon(FaWarehouse), langs: "Cypress + JS", link: "https://github.com/MateusFelS/serverest-api-tests", role: "Engenheiro de QA" },
+  { id: 3, title: "Estudo de Documentações QA", icon: createIcon(FaFileAlt), langs: "Plano de Teste + Casos de Teste + Reporte de Bugs", link: "https://github.com/MateusFelS/manual-QA-exemples", role: "Analista de QA" },
+  { id: 4, title: "Puzzle Game - Voluntário", icon: createIcon( FaPuzzlePiece), langs: "Plano de Teste + Teste de Sistema", link: "https://github.com/VirsoRaivoky/Puzzle", role: "Analista de QA" },
+  { id: 5, title: "Automoção Web - Swag Labs", icon: createIcon(FaShoppingBag), langs: "Playwright + TS", link: "https://github.com/MateusFelS/swag-labs-tests", role: "Engenheiro de QA" },
+  { id: 6, title: "Documentação e Automoção - DemoBlaze", icon: createIcon(FaTools), langs: "Cenário e Plano de Teste + Postman + Reporte de Bugs + Playwright", link: "https://github.com/MateusFelS/demo-blaze", role: "Engenheiro de QA" },
+  { id: 7, title: "Teste de API, E2E e Performance - Processo Seletivo", icon: createIcon(FaLaptopCode), langs: "JMeter + Postman + Cypress", link: "https://github.com/MateusFelS/ProcessoSeletivo", role: "Engenheiro de QA" },
+];
+
+const programmingProjects: Project[] = [
+  { id: 8, title: "StyleSphere", icon: createIcon(FaTshirt), langs: "WordPress", link: "https://github.com/MateusFelS/style_sphere", role: "Desenvolvedor Full Stack" },
+  { id: 9, title: "VeggieDelight", icon: createIcon(FaUtensils), langs: "Flutter + Firebase", link: "https://github.com/MateusFelS/receitas", role: "Desenvolvedor Mobile" },
+  { id: 10, title: "ProdManage", icon: createIcon(FaCut), langs: "Flutter + Nest.js + Ruby + Cucumber", link: "https://github.com/MateusFelS/prod_manage", role: "Desenvolvedor Full Stack" },
+  { id: 11, title: "MapsAndRouts", icon: createIcon(FaMapMarkedAlt), langs: "React Native", link: "https://github.com/MateusFelS/maps_and_routs", role: "Desenvolvedor Mobile" },
+  { id: 12, title: "Compilador", icon: createIcon(FaCode), langs: "C#", link: "https://github.com/MateusFelS/compilador", role: "Desenvolvedor Backend" },
+  { id: 13, title: "Artigo Publicado", icon: createIcon(FaBook), langs: "Atena Editora", link: "https://atenaeditora.com.br/index.php/catalogo/post/metodo-resolucao-de-problemas-aplicado-ao-ensino-de-aprendizado-de-maquina", role: "Autor" },
+  { id: 14, title: "Petshop", icon: createIcon(FaPaw), langs: "React + Tailwind CSS", link: "https://github.com/MateusFelS/petshop", role: "Desenvolvedor Frontend" },
+];
+
 const Projects = () => {
-  const StyledProjects = styled("div")(({ theme }) => ({
-    backgroundColor: theme.palette.primary.main,
-    display: "flex",
-    alignItems: "center",
-    paddingTop: 100,
-    paddingBottom: 50,
-  }));
-
-  const ProjectItem = styled("div")(({ theme }) => ({
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: theme.spacing(2),
-    margin: 5,
-    border: "1px solid white",
-    borderRadius: theme.spacing(1),
-    transition: "background-color 0.3s ease",
-    "&:hover": {
-      backgroundColor: theme.palette.secondary.main,
-    },
-  }));
-
-  const createIcon = (IconComponent: React.ElementType, color = "#ffffff", fontSize = "50px") => {
-    return <IconComponent style={{ color, fontSize }} />;
-  };
-
-  const automationProjects: Project[] = [
-    { id: 1, title: "Automação Web - Coffee Cart", icon: createIcon(Coffee), langs: "Cypress + JS", link: "https://github.com/MateusFelS/coffee-cart-tests" },
-    { id: 2, title: "Automação API - Serverest", icon: createIcon(Inventory), langs: "Cypress + JS", link: "https://github.com/MateusFelS/serverest-api-tests" },
-    { id: 3, title: "Estudo de Documentações QA", icon: createIcon(PendingActions), langs: "Plano de Teste, Casos de Teste e Bug Report", link: "https://github.com/MateusFelS/manual-QA-exemples" },
-    { id: 4, title: "Analista de QA - Voluntário", icon: createIcon(Extension), langs: "Plano de Teste + Teste de Sistema", link: "https://github.com/VirsoRaivoky/Puzzle" },
-    { id: 5, title: "Automoção Web - Swag Labs", icon: createIcon(ShoppingBag), langs: "Playwright + TS", link: "https://github.com/MateusFelS/swag-labs-tests" },
-  ];
-
-  const programmingProjects: Project[] = [
-    { id: 6, title: "StyleSphere", icon: createIcon(Checkroom), langs: "WordPress", link: "https://github.com/MateusFelS/style_sphere" },
-    { id: 7, title: "VeggieDelight", icon: createIcon(Restaurant), langs: "Flutter + Firebase", link: "https://github.com/MateusFelS/receitas" },
-    { id: 8, title: "ProdManage", icon: createIcon(ContentCut), langs: "Flutter + Nest.js + Ruby + Cucumber", link: "https://github.com/MateusFelS/prod_manage" },
-    { id: 9, title: "MapsAndRouts", icon: createIcon(Map), langs: "React Native", link: "https://github.com/MateusFelS/maps_and_routs" },
-    { id: 10, title: "Compilador", icon: createIcon(Code), langs: "C#", link: "https://github.com/MateusFelS/compilador" },
-    { id: 11, title: "Artigo Publicado", icon: createIcon(Book), langs: "Atena Editora", link: "https://atenaeditora.com.br/index.php/catalogo/post/metodo-resolucao-de-problemas-aplicado-ao-ensino-de-aprendizado-de-maquina" },
-    { id: 12, title: "Petshop", icon: createIcon(Pets), langs: "React + Tailwind CSS", link: "https://github.com/MateusFelS/petshop" },
-  ];
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
-  const Carousel = ({ projects, itemsPerSlide }: { projects: Project[]; itemsPerSlide: number }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-  
-    const handlePrev = () => {
-      setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
-    };
-  
-    const handleNext = () => {
-      setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-    };
-  
-    const visibleProjects = projects.slice(
-      currentIndex,
-      currentIndex + itemsPerSlide
-    ).concat(
-      projects.slice(0, Math.max(0, currentIndex + itemsPerSlide - projects.length))
-    );
-  
-    return (
-      <div style={{ position: "relative", overflow: "hidden" }}>
-        <div
-          style={{
-            display: "flex",
-            transition: "transform 0.5s ease-in-out",
-          }}
-        >
-          {visibleProjects.map((project) => (
-            <Link
-              key={project.id}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              underline="none"
-              style={{
-                flexBasis: `${100 / itemsPerSlide}%`,
-                flexGrow: 0,
-                flexShrink: 0,
-              }}
-            >
-              <ProjectItem>
-                <div style={{ marginBottom: 10 }}>{project.icon}</div>
-                <Typography
-                  color="primary.contrastText"
-                  variant="h5"
-                  textAlign="center"
-                  marginTop={1}
-                >
-                  {project.title}
-                </Typography>
-                <Typography
-                  color="primary.contrastText"
-                  variant="h6"
-                  textAlign="center"
-                  marginTop={1}
-                >
-                  {project.langs}
-                </Typography>
-              </ProjectItem>
-            </Link>
-          ))}
-        </div>
-        <button onClick={handlePrev} style={navButtonStyle}>
-          ‹
-        </button>
-        <button onClick={handleNext} style={navButtonStyleNext}>
-          ›
-        </button>
-  
-        <div style={{ display: "flex", justifyContent: "center", marginTop: 10 }}>
-          {projects.map((_, index) => (
-            <div
-              key={index}
-              style={{
-                width: 10,
-                height: 10,
-                margin: "0 5px",
-                borderRadius: "50%",
-                backgroundColor: currentIndex === index ? "#fff" : "#888",
-                transition: "background-color 0.3s",
-              }}
-            ></div>
-          ))}
-        </div>
-      </div>
-    );
-  };  
-  
   return (
     <StyledProjects>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" style={{ backgroundColor: "transparent" }}> 
         <Typography color="primary.contrastText" variant="h2" textAlign="center" marginBottom={4}>
           Projetos de Automação e QA
         </Typography>
-        <Carousel projects={automationProjects} itemsPerSlide={isMobile ? 1 : 3} />
+        <StyledList>
+          {automationProjects.map((project) => (
+            <Link href={project.link} target="_blank" rel="noopener noreferrer" underline="none" key={project.id}>
+              <ListItem button style={{ padding: "8px 16px"}}>
+                <ListItemIcon style={{ minWidth: "40px" }}>{project.icon}</ListItemIcon>
+                <ListItemText
+                  primary={project.title}
+                  secondary={
+                    <>
+                      <Typography variant="body2" color="#cccccc">
+                        {project.role}
+                      </Typography>
+                      <Typography variant="body2" color="#cccccc">
+                        {project.langs}
+                      </Typography>
+                    </>
+                  }
+                  primaryTypographyProps={{ color: "#ffffff", fontSize: "1rem" }} 
+                />
+              </ListItem>
+            </Link>
+          ))}
+        </StyledList>
 
         <Typography color="primary.contrastText" variant="h2" textAlign="center" marginTop={8} marginBottom={4}>
           Outros Projetos
         </Typography>
-        <Carousel projects={programmingProjects} itemsPerSlide={isMobile ? 1 : 3} />
+        <StyledList>
+          {programmingProjects.map((project) => (
+            <Link href={project.link} target="_blank" rel="noopener noreferrer" underline="none" key={project.id}>
+              <ListItem button style={{ padding: "8px 16px" }}>
+                <ListItemIcon style={{ minWidth: "40px" }}>{project.icon}</ListItemIcon>
+                <ListItemText
+                  primary={project.title}
+                  secondary={
+                    <>
+                      <Typography variant="body2" color="#cccccc">
+                        {project.role}
+                      </Typography>
+                      <Typography variant="body2" color="#cccccc">
+                        {project.langs}
+                      </Typography>
+                    </>
+                  }
+                  primaryTypographyProps={{ color: "#ffffff", fontSize: "1rem" }} 
+                />
+              </ListItem>
+            </Link>
+          ))}
+        </StyledList>
       </Container>
     </StyledProjects>
   );
-};
-
-const navButtonStyle: React.CSSProperties = {
-  position: "absolute",
-  top: "50%",
-  left: "10px",
-  transform: "translateY(-50%)",
-  backgroundColor: "rgba(255, 255, 255, 0.5)",
-  border: "none",
-  borderRadius: "50%",
-  width: "30px",
-  height: "30px",
-  cursor: "pointer",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-};
-
-const navButtonStyleNext: React.CSSProperties = {
-  ...navButtonStyle,
-  left: "unset",
-  right: "10px",
 };
 
 export default Projects;

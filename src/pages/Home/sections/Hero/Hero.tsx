@@ -28,18 +28,18 @@ const Hero = () => {
     },
   }));
 
-const StyledTypography = styled(Typography)(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
-  textAlign: "center",
-  "@media (max-width:700px)": {
-    "&.MuiTypography-h2": {
-      fontSize: "1.8rem", 
+  const StyledTypography = styled(Typography)(({ theme }) => ({
+    color: theme.palette.primary.contrastText,
+    textAlign: "center",
+    "@media (max-width:700px)": {
+      "&.MuiTypography-h2": {
+        fontSize: "1.8rem", 
+      },
+      "&.MuiTypography-h4": {
+        fontSize: "1rem", 
+      },
     },
-    "&.MuiTypography-h4": {
-      fontSize: "1.2rem", 
-    },
-  },
-}));
+  }));
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
@@ -75,7 +75,9 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
             <StyledTypography variant="h4">
               <Typewriter
                 options={{
-                  strings: ["QA | Testes Manuais e Automatizados"],
+                  strings: [
+                    "Analista/Engenheiro de QA | Testes Manuais & Automatizados (Cypress, Playwright)"
+                  ],
                   autoStart: true,
                   loop: true,
                   deleteSpeed: 50,
