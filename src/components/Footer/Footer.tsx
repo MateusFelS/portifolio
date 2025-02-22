@@ -2,6 +2,7 @@ import { Container, Grid, IconButton, Link, Typography, styled } from "@mui/mate
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const Footer = () => {
   const StyledFooter = styled("footer")(({ theme }) => ({
@@ -36,6 +37,13 @@ const Footer = () => {
             <Link href="mailto:mateus.fes14@gmail.com">
               <IconButton>
                 <EmailIcon />
+              </IconButton>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link href="https://wa.me/5514997692248" target="_blank" rel="noopener noreferrer">
+              <IconButton>
+                <WhatsAppIcon />
               </IconButton>
             </Link>
           </Grid>

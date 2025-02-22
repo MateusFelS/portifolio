@@ -44,6 +44,22 @@ const StyledList = styled(List)(({ theme }) => ({
   width: '100%', 
   maxWidth: '800px', 
   margin: '0 auto',
+
+  // Estilização da barra de rolagem
+  '&::-webkit-scrollbar': {
+    width: '10px', // Largura da barra de rolagem
+  },
+  '&::-webkit-scrollbar-track': {
+    background: '#f1f1f1', // Cor do fundo da barra de rolagem
+    borderRadius: '10px', // Bordas arredondadas
+  },
+  '&::-webkit-scrollbar-thumb': {
+    background: '#888', // Cor do "thumb" (a parte móvel da barra de rolagem)
+    borderRadius: '10px', // Bordas arredondadas
+  },
+  '&::-webkit-scrollbar-thumb:hover': {
+    background: '#555', // Cor do "thumb" ao passar o mouse
+  },
 }));
 
 const createIcon = (IconComponent: React.ElementType, color = "#ffffff", fontSize = "30px") => {
@@ -54,7 +70,7 @@ const automationProjects: Project[] = [
   { id: 1, title: "Automação Web - Coffee Cart", icon: createIcon(FaCoffee), langs: "Cypress + JS", link: "https://github.com/MateusFelS/coffee-cart-tests", role: "Engenheiro de QA" },
   { id: 2, title: "Automação API - Serverest", icon: createIcon(FaWarehouse), langs: "Cypress + JS", link: "https://github.com/MateusFelS/serverest-api-tests", role: "Engenheiro de QA" },
   { id: 3, title: "Estudo de Documentações QA", icon: createIcon(FaFileAlt), langs: "Plano de Teste + Casos de Teste + Reporte de Bugs", link: "https://github.com/MateusFelS/manual-QA-exemples", role: "Analista de QA" },
-  { id: 4, title: "Puzzle Game - Voluntário", icon: createIcon( FaPuzzlePiece), langs: "Plano de Teste + Teste de Sistema", link: "https://github.com/VirsoRaivoky/Puzzle", role: "Analista de QA" },
+  { id: 4, title: "Puzzle Game - Voluntário", icon: createIcon(FaPuzzlePiece), langs: "Plano de Teste + Teste de Sistema", link: "https://github.com/VirsoRaivoky/Puzzle", role: "Analista de QA" },
   { id: 5, title: "Automoção Web - Swag Labs", icon: createIcon(FaShoppingBag), langs: "Playwright + TS", link: "https://github.com/MateusFelS/swag-labs-tests", role: "Engenheiro de QA" },
   { id: 6, title: "Documentação e Automoção - DemoBlaze", icon: createIcon(FaTools), langs: "Cenário e Plano de Teste + Postman + Reporte de Bugs + Playwright", link: "https://github.com/MateusFelS/demo-blaze", role: "Engenheiro de QA" },
   { id: 7, title: "Teste de API, E2E e Performance - Processo Seletivo", icon: createIcon(FaLaptopCode), langs: "JMeter + Postman + Cypress", link: "https://github.com/MateusFelS/ProcessoSeletivo", role: "Engenheiro de QA" },
