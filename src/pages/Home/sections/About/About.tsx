@@ -1,4 +1,4 @@
-import { Container, Grid, Typography, styled } from "@mui/material";
+import { Container, Grid, Link, Typography, styled } from "@mui/material";
 
 const StyledAbout = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.contrastText,
@@ -44,7 +44,7 @@ const About = () => {
           variant="h2"
           textAlign="center"
           marginBottom={4}
-          sx={{ fontSize: { xs: "2rem", md: "3rem" } }} // Ajuste para mobile
+          sx={{ fontSize: { xs: "2rem", md: "3rem" } }}
         >
           Sobre Mim
         </Typography>
@@ -71,9 +71,18 @@ const About = () => {
             </InfoText>
             <InfoText variant="h6">
               📌 <strong>Projetos no GitHub:</strong>{" "}
-              <a href="https://github.com/MateusFelS" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://github.com/MateusFelS"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  '&:hover': {
+                    color: 'secondary.main',
+                  },
+                }}
+              >
                 github.com/MateusFelS
-              </a>
+              </Link>
             </InfoText>
             <InfoText variant="h6">
               🎯 <strong>Objetivo:</strong> Busco oportunidades como Analista ou Engenheiro de QA, aplicando testes manuais e automatizados!
